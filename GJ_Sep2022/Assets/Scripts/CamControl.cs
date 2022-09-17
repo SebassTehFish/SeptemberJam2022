@@ -7,15 +7,19 @@ public class CamControl : MonoBehaviour
     [SerializeField]
     private bool topFloors;
 
+    // yInitial is starting centered position (centered position of bottom 3 floors
+    // yFinal is ending centered position (centered position of top 3 floors)
     [SerializeField]
-    private int yDiff, smoothSpeed;
+    private int yInitial, yFinal, smoothSpeed;
 
     private void LateUpdate()
     {
-        if (topFloors && !(yDiff == (int)transform.position.y))
+        // Centers camera y position on yFinal (as close as it will get)
+        if (topFloors && !(yFinal == (int)transform.position.y))
         {
             transform.position += new Vector3(0, smoothSpeed * Time.deltaTime, 0);
-        } else if (!topFloors && !(0 == (int)(transform.position.y + 0.99))) {
+        } else if (!topFloors && !(yInitial == (int)(transform.position.y + 0.99))) {
+            // Centers camera y position on yInitial (as close as it will get)
             transform.position -= new Vector3(0, smoothSpeed * Time.deltaTime, 0);
         }
     }
