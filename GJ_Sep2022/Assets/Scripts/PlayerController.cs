@@ -9,20 +9,33 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private float moveHorizontal = 1;
     private float moveVertical = 1; 
+    GameController gameController;
+
+    void FindReferences()
+    {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+    }
+
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        FindReferences();
 
         moveSpeed = 1f;
         JumpForce = 20f;
         isJumping = false;
-        
-    
     }
+
     void Update()
     {
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
+
+        if(gameController.getFoodCount() == 5)
+        {
+            moveSpeed = 0.5f;
+            JumpForce = 10f;
+        }
     }
     void FixedUpdate()
     {
