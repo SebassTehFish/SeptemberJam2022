@@ -7,7 +7,9 @@ public class StairScript : MonoBehaviour
     BoxCollider2D stairCollider;
     BoxCollider2D playerCollider;
     GameObject player;
-    public Vector3 teleportDistance;
+
+    [SerializeField]
+    Vector3 teleportDistance;
 
 
     // Start is called before the first frame update
