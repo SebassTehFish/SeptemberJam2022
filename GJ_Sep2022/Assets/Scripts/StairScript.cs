@@ -16,7 +16,7 @@ public class StairScript : MonoBehaviour
     void Start()
     {
         stairCollider = GetComponent<BoxCollider2D>();
-        player = GameObject.Find("player");
+        player = GameObject.FindWithTag("Player");
         playerCollider = player.GetComponent<BoxCollider2D>();
     }
 
