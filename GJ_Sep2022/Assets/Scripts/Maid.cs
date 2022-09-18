@@ -26,6 +26,8 @@ public class Maid : EnemyAI
         localScale = transform.localScale;
 
         dirX = -1f;
+
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
