@@ -14,9 +14,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // Make player drop items (game controller)
             gameController.setFoodCount(gameController.getFoodCount() - 1);
-            Debug.Log(gameController.getFoodCount());
         }
     }
 }

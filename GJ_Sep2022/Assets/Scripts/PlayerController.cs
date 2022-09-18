@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(moveHorizontal > 0.01f || moveHorizontal < -0.01f);
+        if(moveHorizontal > 0.01f || moveHorizontal < -0.01f)
         {
             rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
         }
