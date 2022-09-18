@@ -28,7 +28,7 @@ public class SceneLoader : MonoBehaviour
                             }
                             break;
                         case BtnMethod.Quit:
-                            Quit();
+                            sceneToggleButton.Button.onClick.AddListener(delegate { Quit(); });
                             break;
                     }
                 }
