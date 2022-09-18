@@ -47,9 +47,13 @@ public class PlayerController : MonoBehaviour
         if((!isJumping) && (moveVertical > 0.01f))
         {
             rb2D.AddForce(new Vector2(0f, moveVertical * JumpForce), ForceMode2D.Impulse);
+            FindObjectOfType<AudioManager>().Play("Jump");
         }
 
-
+        if(moveHorizontal > 0)
+            gameObject.transform.localScale = new Vector3(-2.4142f, 2.4142f, 2.4142f);
+        if(moveHorizontal < 0)
+            gameObject.transform.localScale = new Vector3(2.4142f, 2.4142f, 2.4142f);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

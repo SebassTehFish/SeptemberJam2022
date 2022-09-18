@@ -13,6 +13,26 @@ public class UIControl : MonoBehaviour
 
     private int[] foodOrders = new int[7] {0,0,0,0,0,0,0};
     private int currentCount = 0;
+    GameController gameController;
+
+    public void Start()
+    {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+    }
+    public void Update()
+    {
+        if(getOrderCounter() == 0)
+        {
+            foreach(int i in foodOrders)
+                putNewOrder(gameController.getRoomNumber());
+        }
+
+    }
+
+    public int[] getFoodOrders()
+    {
+        return foodOrders;
+    }
 
     public void updateTime(float curTime)
     {

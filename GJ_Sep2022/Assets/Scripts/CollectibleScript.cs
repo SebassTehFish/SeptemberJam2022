@@ -6,17 +6,23 @@ public class CollectibleScript : MonoBehaviour
 {
     GameController gameController;
     [SerializeField] bool isDoor;
+    [SerializeField] int doorNumber;
     bool isPressed = false;
     bool isColliding = false;
-
+    string[] bells;
+    UIControl UI;
 
     private void Start()
     {
+        UI = GameObject.Find("Main Camera").transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<UIControl>();
         FindReferences();
+        bells = new string[] {"Bell1", "Bell2", "Bell3"};
     }
 
     private void Update()
     {
+        Debug.Log(UI.getFoodOrders()[0]);
+        
         if(isColliding && Input.GetKeyDown(KeyCode.E))
             isPressed = true;
     }
@@ -31,12 +37,27 @@ public class CollectibleScript : MonoBehaviour
         isColliding = true;
         if(other.gameObject.CompareTag("Player") && isPressed && !isDoor)
         {
-            gameController.setFoodCount(gameController.getFoodCount() + 1);
-            isPressed = false;
+            if(gameController.getFoodCount() < 7)
+            {
+                gameController.setFoodCount(gameController.getFoodCount() + 1);
+                isPressed = false;
+                FindObjectOfType<AudioManager>().RandomPlayOneShot(bells);
+            }
         }
         else if(other.gameObject.CompareTag("Player") && isPressed)
         {
-            gameController.setFoodCount(gameController.getFoodCount() - 1);
+            if(gameController.getFoodCount() > 0)
+            {
+                gameController.setFoodCount(gameController.getFoodCount() - 1);
+                for(int i = 0; i < UI.getFoodOrders().Length; i++)
+                {
+                    if(doorNumber == UI.getFoodOrders()[i])
+                    {
+                        UI.orderFilled(i);
+                        FindObjectOfType<AudioManager>().Play("Cash");
+                    }
+                }
+            }
             isPressed = false;
         }
     }

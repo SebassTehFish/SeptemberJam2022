@@ -14,7 +14,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            gameController.setFoodCount(gameController.getFoodCount() - 1);
+            if(gameController.getFoodCount() > 0)
+                gameController.setFoodCount(gameController.getFoodCount() - 1);
+            FindObjectOfType<AudioManager>().Play("Fall");
         }
     }
 }

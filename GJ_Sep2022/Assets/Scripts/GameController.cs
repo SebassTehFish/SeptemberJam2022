@@ -73,6 +73,11 @@ public class GameController : MonoBehaviour
         return number1 * 100 + number2;
     }
 
+    public GameObject getUI()
+    {
+        return obj;
+    }
+
     private void Update()
     {
         if (gameStart)
