@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
             timeBetweenOrder += Time.deltaTime;
 
             // Put new order when time between order goes over time to generate or order counter is 0
-            while (timeBetweenOrder >= timeGenerateOrder || uc.getOrderCounter() == 0)
+            if (timeBetweenOrder >= timeGenerateOrder || uc.getOrderCounter() == 0)
             {
                 //put new order into UI
                 uc.putNewOrder(getRoomNumber());

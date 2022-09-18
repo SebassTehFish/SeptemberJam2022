@@ -11,7 +11,7 @@ public class UIControl : MonoBehaviour
 
     private int maxFoodCarry = 7;
 
-    private int[] foodOrders = new int[7];
+    private int[] foodOrders = new int[7] {0,0,0,0,0,0,0};
     private int currentCount = 0;
 
     public void updateTime(float curTime)
@@ -29,11 +29,11 @@ public class UIControl : MonoBehaviour
 
     public void putNewOrder(int roomNumber)
     {
-        if (foodOrders.Length <= 7)
+        if (currentCount < 7)
         {
             foodOrders[currentCount] = roomNumber;
 
-            FoodbarProgress((float)currentCount / maxFoodCarry);
+            FoodbarProgress((float)(currentCount + 1) / maxFoodCarry);
 
             currentCount++;
         }
@@ -49,6 +49,7 @@ public class UIControl : MonoBehaviour
         if (currentCount > 0)
         {
             foodOrders[index] = 0;
+            currentCount--;
         }
     }
 }
