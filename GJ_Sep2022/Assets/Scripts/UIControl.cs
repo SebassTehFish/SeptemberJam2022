@@ -34,6 +34,8 @@ public class UIControl : MonoBehaviour
             foodOrders[currentCount] = roomNumber;
 
             FoodbarProgress((float)currentCount / maxFoodCarry);
+
+            currentCount++;
         }
     }
 
