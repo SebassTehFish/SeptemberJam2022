@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-    private float moveSpeed;
-    private float JumpForce;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float JumpForce;
     private bool isJumping;
     private float moveHorizontal = 1;
     private float moveVertical = 1; 
@@ -20,9 +20,6 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         FindReferences();
-
-        moveSpeed = 1f;
-        JumpForce = 20f;
         isJumping = false;
     }
 
@@ -51,9 +48,9 @@ public class PlayerController : MonoBehaviour
         }
 
         if(moveHorizontal > 0)
-            gameObject.transform.localScale = new Vector3(-2.4142f, 2.4142f, 2.4142f);
+            gameObject.transform.localScale = new Vector3(-1.8f, 1.8f, 1.8f);
         if(moveHorizontal < 0)
-            gameObject.transform.localScale = new Vector3(2.4142f, 2.4142f, 2.4142f);
+            gameObject.transform.localScale = new Vector3(1.8f, 1.8f, 1.8f);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

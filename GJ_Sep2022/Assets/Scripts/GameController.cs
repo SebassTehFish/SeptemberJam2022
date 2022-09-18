@@ -107,5 +107,8 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+
+        if(SecondsLeft() <= 0)
+            Application.Quit();
     }
 }

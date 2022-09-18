@@ -21,8 +21,6 @@ public class CollectibleScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(UI.getFoodOrders()[0]);
-        
         if(isColliding && Input.GetKeyDown(KeyCode.E))
             isPressed = true;
     }
