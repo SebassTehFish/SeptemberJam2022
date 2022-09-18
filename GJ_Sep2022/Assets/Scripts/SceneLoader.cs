@@ -17,9 +17,20 @@ public class SceneLoader : MonoBehaviour
         {
             foreach (var sceneToggleButton in SceneToggleButtons)
             {
-                if (sceneToggleButton.Button != null && sceneToggleButton.Scene != null)
+                if (sceneToggleButton.Button != null)
                 {
-                    sceneToggleButton.Button.onClick.AddListener(delegate { LoadScene(sceneToggleButton.Scene.name); });
+                    switch (sceneToggleButton.Method)
+                    {
+                        case BtnMethod.Load:
+                            if (sceneToggleButton.Scene != null)
+                            {
+                                sceneToggleButton.Button.onClick.AddListener(delegate { LoadScene(sceneToggleButton.Scene.name); });
+                            }
+                            break;
+                        case BtnMethod.Quit:
+                            Quit();
+                            break;
+                    }
                 }
             }
         }
@@ -30,10 +41,22 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    void Quit()
+    {
+        Application.Quit();
+    }
+
     [Serializable]
     public class SceneButton
     {
         public Button Button;
+        public BtnMethod Method;
         public Object Scene;
+    }
+
+    public enum BtnMethod
+    {
+        Load,
+        Quit,
     }
 }
