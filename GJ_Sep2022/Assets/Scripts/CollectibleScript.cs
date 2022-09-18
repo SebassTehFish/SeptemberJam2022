@@ -55,6 +55,7 @@ public class CollectibleScript : MonoBehaviour
                     {
                         UI.orderFilled(i);
                         FindObjectOfType<AudioManager>().Play("Cash");
+                        gameController.setScore(gameController.getScore() + 1);
                     }
                 }
             }
