@@ -309,19 +309,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 262141927}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1623231489}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: QuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &262141927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,19 +634,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1361932193}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1623231489}
-        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1361932193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,3 +1281,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075542521}
   m_CullTransparentMesh: 1
+--- !u!1001 &6945228913019687524
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1938044084905190146, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_Name
+      value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 519.5299
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 274.63577
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.155851
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041455662649418726, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037660921246443478, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: SceneToggleButtons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037660921246443478, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: SceneToggleButtons.Array.data[0].Scene
+      value: 
+      objectReference: {fileID: 102900000, guid: ff56cd24ad2518e408394a8227a1c76e, type: 3}
+    - target: {fileID: 6037660921246443478, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: SceneToggleButtons.Array.data[0].Button
+      value: 
+      objectReference: {fileID: 1361932192}
+    - target: {fileID: 6037660921246443478, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: SceneToggleButtons.Array.data[1].Button
+      value: 
+      objectReference: {fileID: 262141926}
+    - target: {fileID: 6037660921246443478, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
+      propertyPath: SceneToggleButtons.Array.data[1].Method
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af85f84a64a4b2647863cc71e33bfdd4, type: 3}
