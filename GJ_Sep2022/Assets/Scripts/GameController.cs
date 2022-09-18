@@ -108,7 +108,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if(SecondsLeft() <= 0)
+        if(timeLeft < 0)
             Application.Quit();
     }
 }
